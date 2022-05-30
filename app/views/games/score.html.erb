@@ -1,0 +1,13 @@
+<h1>Result</h1>
+<% if @validation[0] == 0 %>
+  <% if @validation[1] == 0 %>
+    <p>Sorry but <strong><%= @word %></strong> does not seam to be a valid English word...</p>
+  <% else %>
+    <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @list %></p>
+  <% end %>
+<% else %>
+  <p><strong>Congratilation!</strong> <%= @word %> is a valid English word!</p>
+  <p>Your score is <%= @validation[0]**2 %></p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
